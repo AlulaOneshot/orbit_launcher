@@ -1,15 +1,14 @@
 <script setup>
-import {useRoute, useRouter} from "vue-router";
 import {onMounted} from "vue";
-import {play_track, register_track, register_track_looping} from "../../lib/bgm_manager.js";
 import TextButton from "../../lib/components/TextButton.vue";
 import GlassLayer from "../../lib/components/GlassLayer.vue";
+import {useRouter} from "vue-router";
 
   const router = useRouter();
 
-  onMounted(async () => {
-
-  })
+  function handleBack() {
+    router.back();
+  }
 </script>
 
 <template>
@@ -44,6 +43,7 @@ import GlassLayer from "../../lib/components/GlassLayer.vue";
           <h1 class="text-2xl">Italiano</h1>
         </TextButton>
       </div>
+      <TextButton other_classes="absolute bottom-5 left-5" :on_click="handleBack">Back</TextButton>
     </div>
   </div>
 </template>
